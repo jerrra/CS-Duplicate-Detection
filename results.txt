@@ -1,0 +1,58 @@
+--- Load Dataset ---
+Total Products: 1624
+
+--- Generating Impact Visualization (10% Rule) ---
+   [Analysis] Calculating full pairwise Jaccard matrices for impact visualization...
+
+   --- Jaccard Similarity Analysis ---
+   Total Pairs Checked: 1317876
+   Pairs with Jaccard = 0 (Before Pruning): 106884 (8.11%)
+   Pairs with Jaccard = 0 (After 10% Rule): 1061151 (80.52%)
+   (The 80.52% of pairs are mathematically invisible to LSH because they share NO rare words)
+
+========================================
+CALCULATING AVERAGES OVER 100 BOOTSTRAPS
+========================================
+
+Final Averaged Plot Data:
+t     Frac     PC       PQ       F1*      Final F1   MSM Pairs  Surv cand post3 %    Surv Tot post3%    Inch cand Pruned %
+0.00  0.199    0.960    0.019    0.038    0.327      2662.8     7.48                 1.49               5.75
+0.05  0.167    0.957    0.021    0.042    0.331      2405.3     8.06                 1.35               5.62
+0.10  0.034    0.855    0.064    0.119    0.397      718.2      11.82                0.40               3.97
+0.15  0.034    0.855    0.064    0.119    0.397      718.2      11.82                0.40               3.97
+0.20  0.007    0.555    0.170    0.258    0.417      179.4      15.29                0.10               1.91
+0.25  0.007    0.555    0.170    0.258    0.417      179.4      15.29                0.10               1.91
+0.30  0.002    0.278    0.285    0.278    0.307      53.2       15.94                0.03               0.88
+0.35  0.002    0.278    0.285    0.278    0.307      53.2       15.94                0.03               0.88
+0.40  0.001    0.132    0.342    0.187    0.179      21.0       15.00                0.01               0.27
+0.45  0.000    0.063    0.339    0.105    0.096      10.1       12.82                0.01               0.06
+0.50  0.000    0.034    0.331    0.061    0.058      5.8        11.08                0.00               0.08
+0.55  0.000    0.021    0.320    0.038    0.035      3.5        9.47                 0.00               0.00
+0.60  0.000    0.013    0.294    0.025    0.024      2.2        8.03                 0.00               0.00
+0.65  0.000    0.007    0.209    0.014    0.013      1.4        6.21                 0.00               0.00
+0.70  0.000    0.004    0.157    0.007    0.007      0.6        3.78                 0.00               0.00
+0.75  0.000    0.001    0.050    0.002    0.002      0.2        1.59                 0.00               0.00
+
+========================================
+VOCABULARY AND PRUNING STATISTICS (Cumulative)
+========================================
+Original Model Words (Avg):  3053.2
+Pruned ('Stop') Words (Avg): 45.3 (Freq > 0.1)
+
+INTERSECTION of Pruned Words (Across 100 Bootstraps) [Total: 40]:
+['0', '000', '1', '10', '100', '1080', '1080p', '120', '120hz', '1366', '15', '1920', '2', '20', '200', '24', '240', '3', '31', '32', '3d', '4', '400', '46', '480', '5', '50', '55', '55inch', '6', '60', '60hz', '7', '720', '720p', '768', '8', '9', 'lg', 'samsung']
+
+========================================
+EFFICIENCY FUNNEL (Averaged over Bootstraps)
+Based on Threshold with Best Final F1
+========================================
+Selected Threshold t:     0.2
+Achieved F1 Score:        0.4168
+--------------------------------------------------
+1. Total Possible Pairs:      1,317,876
+2. Pairs w/ Jaccard > 0:      248,544    (Theoretical Ceiling, ~18.9%)
+3. LSH Candidates:            1,172      (Evaluated)
+4. Removed by Inch Blocking:  22         (Subset of Candidates)
+5. Final MSM Pairs:           179        (Input to Clusters)
+--------------------------------------------------
+Total Efficiency Gain:        99.99% reduction
